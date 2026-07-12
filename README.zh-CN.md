@@ -1,12 +1,8 @@
-# Codex 使用审计器 / Codex Usage Auditor
+# Codex 使用审计器
 
 本地优先的 Codex 工作复盘 Skill。审查会话、项目、返工模式和下周期行动，并生成可验证的本地报告。
 
-Local-first Codex workflow review Skill for sessions, projects, rework patterns, and next-cycle actions.
-
-[![CI](https://github.com/huangweibin0804-lang/codex-auditor/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/huangweibin0804-lang/codex-auditor/actions/workflows/test.yml) · [中文文档](README.zh-CN.md) · [English](README.en.md)
-
-## 最简单的安装方式：把 GitHub 链接发给 Codex
+## 最简单的安装方式：把链接发给 Codex
 
 在 Codex 里新建一个任务，把下面整段发出去：
 
@@ -15,7 +11,9 @@ Local-first Codex workflow review Skill for sessions, projects, rework patterns,
 https://github.com/huangweibin0804-lang/codex-auditor
 ```
 
-在支持从 GitHub 安装 Skill 的 Codex 客户端中，Codex 会读取仓库并按当前环境执行安装；如果当前客户端要求确认目录或权限，按提示确认即可。若当前客户端不支持自动安装，请使用下面的手动安装方式。安装完成后，可以直接发送：
+这适用于支持从 GitHub 读取并写入本地 Skills 的 Codex 客户端。若客户端要求确认目录或权限，按提示确认即可。
+
+安装完成后发送：
 
 ```text
 用 Codex审查器审查我最近 7 天的使用记录
@@ -38,8 +36,6 @@ https://github.com/huangweibin0804-lang/codex-auditor
 
 ## 手动安装
 
-当当前客户端无法自动安装时：
-
 ```bash
 git clone https://github.com/huangweibin0804-lang/codex-auditor.git /tmp/codex-auditor-repo
 mkdir -p ~/.codex/skills
@@ -48,14 +44,25 @@ cp -R /tmp/codex-auditor-repo/codex-auditor ~/.codex/skills/codex-auditor
 
 默认使用中文入口。需要英文版本时，将 `SKILL.en.md` 复制为安装目录中的 `SKILL.md`。
 
-## English
+## 本地运行与测试
 
-See [README.en.md](README.en.md) for the English quick-install prompt, manual setup, features, privacy boundary, and validation commands.
+```bash
+cd codex-auditor
+python3 scripts/audit_codex_usage.py --days 7
+python3 scripts/test_auditor.py
+python3 scripts/test_rich_audit.py
+python3 scripts/validate_skill_security.py .
+```
+
+PDF 是可选步骤，需要本机有 Playwright：
+
+```bash
+npm install playwright
+node scripts/render_report_pdf.js ~/.codex/reports/<report-id>.html ~/.codex/reports/<report-id>.pdf
+```
 
 ## 当前状态
 
 这是公开预览版。确定性审计、预算受限的富分析流程、本地证据处理和自动化测试已包含；外部用户重复性与更广泛环境兼容性仍属于发布闸门。
-
-## License
 
 许可证尚未指定。需要修改、再发布或商业使用时，请先与作者确认授权范围。
