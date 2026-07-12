@@ -1,44 +1,25 @@
-# Codex 使用审计器
+# Codex 使用审计器 / Codex Usage Auditor
 
-一个本地优先的 Codex 使用复盘 Skill。它从本机 Codex 会话日志生成 Markdown、HTML、JSON 和证据 manifest，区分可观察事实、确定性活动估算、规则型发现和后续行动。
+一个本地优先的 Codex 使用复盘 Skill，用于生成有证据链的 Markdown、HTML、JSON 和本地私密报告。
 
-## 使用方式
+Local-first Codex usage review Skill with evidence-backed Markdown, HTML, JSON, and private local reports.
 
-将 `codex-auditor/` 复制到 Codex 的 Skills 目录，或在支持从 GitHub 加载 Skill 的客户端中指向这个目录，然后发送：
+| 中文 | English |
+|---|---|
+| [中文文档](README.zh-CN.md) | [English documentation](README.en.md) |
+| [中文 Skill](codex-auditor/SKILL.md) | [English Skill](codex-auditor/SKILL.en.md) |
+| [MVP 规格](MVP-SPEC.md) | [MVP public summary](MVP-SPEC.en.md) |
 
-```text
-用 Codex审查器审查我最近 7 天的使用记录
-```
-
-也可以明确指定 1、7、30 天或不超过 90 天的自定义日期范围。
-
-## 本地运行
+## Quick install
 
 ```bash
-cd codex-auditor
-python3 scripts/audit_codex_usage.py --days 7
-python3 scripts/test_auditor.py
-python3 scripts/test_rich_audit.py
-python3 scripts/validate_skill_security.py .
+git clone https://github.com/huangweibin0804-lang/codex-auditor.git /tmp/codex-auditor-repo
+mkdir -p ~/.codex/skills
+cp -R /tmp/codex-auditor-repo/codex-auditor ~/.codex/skills/codex-auditor
 ```
 
-报告默认写入 `~/.codex/reports/`。PDF 是可选渲染步骤，需要本机有 Playwright：
+Choose `SKILL.md` for Chinese or replace it with `SKILL.en.md` for the English version. See the language-specific README for privacy boundaries, local commands, and validation steps.
 
-```bash
-npm install playwright
-node scripts/render_report_pdf.js ~/.codex/reports/<report-id>.html ~/.codex/reports/<report-id>.pdf
-```
+## Status
 
-## 隐私边界
-
-- 确定性统计、日志扫描、脱敏、manifest 和报告渲染在本机完成。
-- Skill 不把原始 JSONL 上传到 Skill 作者或分析服务。
-- 富分析模式会把经过筛选和脱敏的历史摘要发送到当前 Codex 模型链路；需要完全本地处理时，使用“只做本地统计”。
-- 报告用于观察 Codex interaction activity estimate，不代表真实工时、项目完成度或完整的任务边界。
-
-## 目录
-
-- `codex-auditor/SKILL.md`：Skill 入口和运行规范
-- `codex-auditor/scripts/`：审计器、富分析流程、验证器和测试
-- `codex-auditor/references/`：指标、输入输出 Schema 和报告规范
-- `MVP-SPEC.md`：产品与验收规格
+This repository is a public preview. Deterministic audit, bounded rich-analysis flow, local evidence handling, and regression tests are included. External-user repeatability and broader compatibility remain release-gate work.

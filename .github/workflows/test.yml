@@ -1,0 +1,31 @@
+name: Test Codex Usage Auditor
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Run deterministic and rich-analysis tests
+        run: |
+          python codex-auditor/scripts/test_auditor.py
+          python codex-auditor/scripts/test_rich_audit.py
+          python codex-auditor/scripts/validate_skill_security.py codex-auditor
+
+      - name: Check PDF renderer syntax
+        run: node --check codex-auditor/scripts/render_report_pdf.js
