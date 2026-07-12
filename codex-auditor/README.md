@@ -1,5 +1,12 @@
 # Codex Auditor Skill Package
 
+One-line install prompt for Codex:
+
+```text
+Install this Codex Skill and place it in my local Skills directory:
+https://github.com/huangweibin0804-lang/codex-auditor
+```
+
 | 中文 | English |
 |---|---|
 | [SKILL.md](SKILL.md) | [SKILL.en.md](SKILL.en.md) |
