@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex审查器"
+  short_description: "本地复盘 Codex 项目、协作模式与下周期行动"
+  default_prompt: "Use $codex-auditor to review my recent 7 days of Codex work and generate a local private HTML report."
