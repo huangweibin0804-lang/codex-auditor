@@ -3,7 +3,7 @@ name: codex-auditor
 description: Generate a local, evidence-backed review of recent Codex usage over 1, 7, 30, or custom days. Use when the user asks to audit, review, retrospect, or analyze their Codex projects, activity, prompts, workflow patterns, progress, outputs, or next-cycle actions, and when they want an offline HTML and Markdown report. Uses deterministic local metrics and a bounded rich-analysis path while preventing developer data collection.
 ---
 
-# Codex审查器
+# Codex-优化审查小助手
 
 Generate a local private report that separates facts, estimates, semantic inferences, and recommendations. Never describe activity estimates as true working hours or claim that every real task boundary or historical artifact is observable.
 

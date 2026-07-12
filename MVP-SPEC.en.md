@@ -1,10 +1,10 @@
-# Codex Usage Auditor MVP — English public summary
+# Codex Optimization Audit Assistant MVP — English public summary
 
 This document is an English public summary of the detailed Chinese specification in [MVP-SPEC.md](MVP-SPEC.md). The Chinese document remains the canonical product specification.
 
 ## Product scope
 
-Codex Usage Auditor is a local-first review Skill for high-frequency Codex users. It focuses on work quality, collaboration patterns, evidence-backed progress, repeat work, and next-cycle actions. Token counts and session counts are supporting signals, not the product goal.
+Codex Optimization Audit Assistant is a local-first review Skill for high-frequency Codex users. It focuses on work quality, collaboration patterns, evidence-backed progress, repeat work, and next-cycle actions. Token counts and session counts are supporting signals, not the product goal.
 
 ## User output
 

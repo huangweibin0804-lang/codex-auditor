@@ -1,4 +1,4 @@
-# Codex 使用审计器
+# Codex-优化审查小助手
 
 本地优先的 Codex 工作复盘 Skill。审查会话、项目、返工模式和下周期行动，并生成可验证的本地报告。
 
@@ -8,7 +8,7 @@
 
 ```text
 请安装这个 Codex Skill，并将它放入我的本地 Skills 目录：
-https://github.com/huangweibin0804-lang/codex-auditor
+https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant
 ```
 
 这适用于支持从 GitHub 读取并写入本地 Skills 的 Codex 客户端。若客户端要求确认目录或权限，按提示确认即可。
@@ -16,7 +16,7 @@ https://github.com/huangweibin0804-lang/codex-auditor
 安装完成后发送：
 
 ```text
-用 Codex审查器审查我最近 7 天的使用记录
+用 Codex-优化审查小助手审查我最近 7 天的使用记录
 ```
 
 ## 这个 Skill 做什么
@@ -37,7 +37,7 @@ https://github.com/huangweibin0804-lang/codex-auditor
 ## 手动安装
 
 ```bash
-git clone https://github.com/huangweibin0804-lang/codex-auditor.git /tmp/codex-auditor-repo
+git clone https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant.git /tmp/codex-auditor-repo
 mkdir -p ~/.codex/skills
 cp -R /tmp/codex-auditor-repo/codex-auditor ~/.codex/skills/codex-auditor
 ```

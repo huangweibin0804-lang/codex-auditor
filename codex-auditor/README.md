@@ -4,7 +4,7 @@ One-line install prompt for Codex:
 
 ```text
 Install this Codex Skill and place it in my local Skills directory:
-https://github.com/huangweibin0804-lang/codex-auditor
+https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant
 ```
 
 | 中文 | English |

@@ -1,4 +1,4 @@
-# Codex Usage Auditor
+# Codex Optimization Audit Assistant
 
 A local-first Codex workflow review Skill for sessions, projects, rework patterns, and next-cycle actions, with evidence-backed local reports.
 
@@ -8,7 +8,7 @@ Start a new Codex task and send this entire prompt:
 
 ```text
 Install this Codex Skill and place it in my local Skills directory:
-https://github.com/huangweibin0804-lang/codex-auditor
+https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant
 ```
 
 This path is intended for Codex clients that can read a GitHub repository and write to the local Skills directory. If the client asks for a path or permission confirmation, approve it when appropriate.
@@ -16,7 +16,7 @@ This path is intended for Codex clients that can read a GitHub repository and wr
 After installation, send:
 
 ```text
-Use the Codex Usage Auditor to review my recent 7 days of Codex activity.
+Use the Codex Optimization Audit Assistant to review my recent 7 days of Codex activity.
 ```
 
 ## What it does
@@ -39,7 +39,7 @@ Use the Codex Usage Auditor to review my recent 7 days of Codex activity.
 When the current client cannot install automatically:
 
 ```bash
-git clone https://github.com/huangweibin0804-lang/codex-auditor.git /tmp/codex-auditor-repo
+git clone https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant.git /tmp/codex-auditor-repo
 mkdir -p ~/.codex/skills
 cp -R /tmp/codex-auditor-repo/codex-auditor ~/.codex/skills/codex-auditor
 ```

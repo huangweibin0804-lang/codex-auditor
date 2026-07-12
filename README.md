@@ -1,10 +1,10 @@
-# Codex 使用审计器 / Codex Usage Auditor
+# Codex-优化审查小助手 / Codex Optimization Audit Assistant
 
 本地优先的 Codex 工作复盘 Skill。审查会话、项目、返工模式和下周期行动，并生成可验证的本地报告。
 
 Local-first Codex workflow review Skill for sessions, projects, rework patterns, and next-cycle actions.
 
-[![CI](https://github.com/huangweibin0804-lang/codex-auditor/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/huangweibin0804-lang/codex-auditor/actions/workflows/test.yml) · [中文文档](README.zh-CN.md) · [English](README.en.md)
+[![CI](https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant/actions/workflows/test.yml) · [中文文档](README.zh-CN.md) · [English](README.en.md)
 
 ## 最简单的安装方式：把 GitHub 链接发给 Codex
 
@@ -12,13 +12,13 @@ Local-first Codex workflow review Skill for sessions, projects, rework patterns,
 
 ```text
 请安装这个 Codex Skill，并将它放入我的本地 Skills 目录：
-https://github.com/huangweibin0804-lang/codex-auditor
+https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant
 ```
 
 在支持从 GitHub 安装 Skill 的 Codex 客户端中，Codex 会读取仓库并按当前环境执行安装；如果当前客户端要求确认目录或权限，按提示确认即可。若当前客户端不支持自动安装，请使用下面的手动安装方式。安装完成后，可以直接发送：
 
 ```text
-用 Codex审查器审查我最近 7 天的使用记录
+用 Codex-优化审查小助手审查我最近 7 天的使用记录
 ```
 
 ## 这个 Skill 做什么
@@ -41,7 +41,7 @@ https://github.com/huangweibin0804-lang/codex-auditor
 当当前客户端无法自动安装时：
 
 ```bash
-git clone https://github.com/huangweibin0804-lang/codex-auditor.git /tmp/codex-auditor-repo
+git clone https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant.git /tmp/codex-auditor-repo
 mkdir -p ~/.codex/skills
 cp -R /tmp/codex-auditor-repo/codex-auditor ~/.codex/skills/codex-auditor
 ```
