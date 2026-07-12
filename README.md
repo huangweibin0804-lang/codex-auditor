@@ -41,4 +41,4 @@ node scripts/render_report_pdf.js ~/.codex/reports/<report-id>.html ~/.codex/rep
 - `codex-auditor/SKILL.md`：Skill 入口和运行规范
 - `codex-auditor/scripts/`：审计器、富分析流程、验证器和测试
 - `codex-auditor/references/`：指标、输入输出 Schema 和报告规范
-- `Codex使用审计器-MVP规格.md`：产品与验收规格
+- `MVP-SPEC.md`：产品与验收规格
