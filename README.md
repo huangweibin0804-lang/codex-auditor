@@ -15,7 +15,7 @@ Local-first Codex workflow review Skill for sessions, projects, rework patterns,
 https://github.com/huangweibin0804-lang/codex-auditor
 ```
 
-Codex 会读取仓库并按当前环境执行安装；如果当前客户端要求确认目录或权限，按提示确认即可。安装完成后，可以直接发送：
+在支持从 GitHub 安装 Skill 的 Codex 客户端中，Codex 会读取仓库并按当前环境执行安装；如果当前客户端要求确认目录或权限，按提示确认即可。若当前客户端不支持自动安装，请使用下面的手动安装方式。安装完成后，可以直接发送：
 
 ```text
 用 Codex审查器审查我最近 7 天的使用记录
