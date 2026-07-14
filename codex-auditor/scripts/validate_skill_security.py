@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 FORBIDDEN = {"requests", "socket", "urllib", "http", "httpx", "aiohttp", "ftplib", "telnetlib", "subprocess"}
-ALLOWED = {"__future__", "argparse", "datetime", "hashlib", "html", "json", "math", "os", "re", "stat", "sys", "collections", "dataclasses", "pathlib", "typing", "unicodedata", "ast", "importlib", "tempfile", "audit_codex_usage", "rich_audit"}
+ALLOWED = {"__future__", "argparse", "datetime", "hashlib", "html", "json", "math", "os", "re", "shutil", "stat", "sys", "collections", "dataclasses", "pathlib", "typing", "unicodedata", "ast", "importlib", "tempfile", "audit_codex_usage", "rich_audit", "run_audit", "install_skill"}
 FORBIDDEN_OS_CALLS = {"system", "popen", "spawnl", "spawnle", "spawnlp", "spawnlpe", "spawnv", "spawnve", "spawnvp", "spawnvpe", "execl", "execle", "execlp", "execlpe", "execv", "execve", "execvp", "execvpe"}
 
 def main() -> int:

@@ -25,6 +25,7 @@ jobs:
         run: |
           python codex-auditor/scripts/test_auditor.py
           python codex-auditor/scripts/test_rich_audit.py
+          python codex-auditor/scripts/test_workflow.py
           python codex-auditor/scripts/validate_skill_security.py codex-auditor
 
       - name: Check PDF renderer syntax

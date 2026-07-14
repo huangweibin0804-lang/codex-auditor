@@ -24,6 +24,8 @@ https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant
 - 汇总 1、7、30 天或自定义周期内的 Codex 使用情况
 - 区分可观察事实、确定性活动估算、规则型发现和行动建议
 - 识别项目、返工、约束追加、失败和范围改向模式
+- 用统一入口自动推进项目分类、深度分析、校验和失败降级
+- 报告第一屏先展示一句话结论、主要投入、最大卡点和三项行动
 - 生成本地 HTML、Markdown、JSON、证据 manifest，以及可选 PDF
 - 富分析只使用经过筛选和脱敏的摘要，并保留证据与版本信息
 
@@ -38,8 +40,7 @@ https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant
 
 ```bash
 git clone https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant.git /tmp/codex-auditor-repo
-mkdir -p ~/.codex/skills
-cp -R /tmp/codex-auditor-repo/codex-auditor ~/.codex/skills/codex-auditor
+python3 /tmp/codex-auditor-repo/codex-auditor/scripts/install_skill.py install
 ```
 
 默认使用中文入口。需要英文版本时，将 `SKILL.en.md` 复制为安装目录中的 `SKILL.md`。
@@ -48,11 +49,23 @@ cp -R /tmp/codex-auditor-repo/codex-auditor ~/.codex/skills/codex-auditor
 
 ```bash
 cd codex-auditor
-python3 scripts/audit_codex_usage.py --days 7
+python3 scripts/run_audit.py start --mode local --days 7
 python3 scripts/test_auditor.py
 python3 scripts/test_rich_audit.py
+python3 scripts/test_workflow.py
 python3 scripts/validate_skill_security.py .
 ```
+
+检查 GitHub 源码与本机安装版是否一致：
+
+```bash
+python3 scripts/install_skill.py check
+python3 scripts/install_skill.py install --force
+```
+
+## 报告阅读顺序
+
+新版报告第一屏是一张“审查结论牌”：一句话结论、主要投入、最大卡点和富分析状态。紧接着展示按优先级排序的三项行动。数据概览和项目复盘随后出现，活动趋势、小时图与场景分布收进可展开区域。
 
 PDF 是可选步骤，需要本机有 Playwright：
 
