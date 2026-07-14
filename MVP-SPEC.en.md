@@ -16,6 +16,8 @@ For a selected period of 1, 7, 30, or custom days up to 90 days, the Skill can p
 - an optional locally rendered PDF;
 - a bounded rich analysis with project clustering, deep review, and actions.
 
+The report leads with a verdict card containing one core judgment, the main focus areas, the largest friction point, and analysis status. Up to three prioritized actions follow immediately; activity charts remain available in a collapsed detail section.
+
 ## Analysis contract
 
 The deterministic layer scans local Codex JSONL, redacts sensitive values, assigns message chains, estimates observable interaction activity, classifies scenarios, and triggers fixed rule-based findings. The rich-analysis layer receives only bounded, redacted packets and must return schema-valid JSON with provenance and evidence references.
@@ -31,6 +33,8 @@ The first rich-analysis run discloses that selected and redacted summaries enter
 ## Performance budget
 
 A normal 30-day rich run is designed for two to five model requests: one to three clustering calls, an optional merge call, and one combined deep-review call. The deterministic scan remains the fallback when semantic validation fails.
+
+The packaged `scripts/run_audit.py` entry point guides these stages through explicit statuses and output destinations. It allows one schema repair, then returns the deterministic report without requiring user intervention.
 
 ## Release gates
 

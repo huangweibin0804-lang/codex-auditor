@@ -26,6 +26,8 @@ https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant
 - 汇总 1、7、30 天或自定义周期内的 Codex 使用情况
 - 区分可观察事实、确定性活动估算、规则型发现和行动建议
 - 识别项目、返工、约束追加、失败和范围改向模式
+- 用统一入口自动推进项目分类、深度分析、校验和失败降级
+- 报告第一屏先展示一句话结论、主要投入、最大卡点和三项行动
 - 生成本地 HTML、Markdown、JSON、证据 manifest，以及可选 PDF
 - 富分析只使用经过筛选和脱敏的摘要，并保留证据与版本信息
 
@@ -42,11 +44,21 @@ https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant
 
 ```bash
 git clone https://github.com/huangweibin0804-lang/Codex-Optimization-Audit-Assistant.git /tmp/codex-auditor-repo
-mkdir -p ~/.codex/skills
-cp -R /tmp/codex-auditor-repo/codex-auditor ~/.codex/skills/codex-auditor
+python3 /tmp/codex-auditor-repo/codex-auditor/scripts/install_skill.py install
 ```
 
 默认使用中文入口。需要英文版本时，将 `SKILL.en.md` 复制为安装目录中的 `SKILL.md`。
+
+更新仓库后，可检查并同步本机版本：
+
+```bash
+python3 codex-auditor/scripts/install_skill.py check
+python3 codex-auditor/scripts/install_skill.py install --force
+```
+
+## 报告阅读顺序
+
+新版报告先给出“审查结论牌”，随后依次展示三项行动、主要项目与数据概览。活动趋势、小时图和场景分布收在可展开区域中，减少统计数字对核心判断的干扰。扫描线和状态点使用纯 CSS 轻量动效，并支持系统的“减少动态效果”设置。
 
 ## English
 

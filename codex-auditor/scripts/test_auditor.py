@@ -69,6 +69,7 @@ def main():
         report_html = paths["html"].read_text(encoding="utf-8")
         assert "/private/project" not in report_html
         assert "--color-ink:#0a1217" in report_html
+        assert "--color-lime:#cdfe00" in report_html
         assert "--radius-card:24px" in report_html
         assert "@theme" in report_html
         assert "https://" not in report_html and "http://" not in report_html
@@ -78,6 +79,17 @@ def main():
         assert "统计口径" not in report_html
         assert "证据" not in report_html
         assert "本地私密报告" in report_html
+        assert report_html.index("这段时间的复盘") < report_html.index("数据概览")
+        assert all(label in report_html for label in ("你主要在做什么", "你最明显的进展是什么", "最需要先解决什么"))
+        assert "conclusion-panel" in report_html
+        assert "margin-ornaments" in report_html and "margin-network" in report_html and "margin-mark" in report_html
+        assert "openai-blossom" in report_html and "<ellipse" not in report_html
+        assert "network-line" in report_html and "network-cursor" in report_html
+        assert "margin-route" not in report_html and "margin-dot-field" not in report_html and "radial-gradient" not in report_html
+        assert "@media(max-width:1360px){.margin-ornaments{display:none}}" in report_html
+        assert report_html.index("接下来只做这三件事") < report_html.index("展开查看活动数据")
+        assert "scan-line" not in report_html and "prefers-reduced-motion" in report_html
+        assert "activity-details" in report_html
         assert stat.S_IMODE(out.stat().st_mode) == 0o700
         assert all(stat.S_IMODE(path.stat().st_mode) == 0o600 for path in paths.values())
         report_json = json.loads(paths["json"].read_text(encoding="utf-8"))
@@ -85,6 +97,8 @@ def main():
         metadata = report_json["analysis_metadata"]
         assert metadata["semantic_input_schema_version"] == "semantic_audit_input_v2"
         assert metadata["analysis_prompt_version"] == "rich_audit_prompt_v1"
+        report_markdown = paths["markdown"].read_text(encoding="utf-8")
+        assert report_markdown.index("## 三条结论") < report_markdown.index("## 数据概览")
     print("auditor tests passed")
 
 if __name__ == "__main__":

@@ -106,6 +106,9 @@ def main() -> None:
         assert "这说明什么" not in html and "下次可以怎么做" not in html
         assert "FACT" not in html and "INFERENCE" not in html and "RECOMMENDATION" not in html
         assert "Codex 审查器" in html
+        assert html.index("这段时间的复盘") < html.index("数据概览")
+        assert html.index("接下来只做这三件事") < html.index("项目版图")
+        assert "最需要先解决什么" in html and "分析完成" in html
         assert str(workspace) not in html
         invalid = json.loads(json.dumps(deep_output))
         invalid["actions"][0]["supporting_evidence_ids"] = ["ev_unknown"]
